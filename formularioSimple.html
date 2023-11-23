@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="style1.css" />
+    <!---->
+    <title>formularioSimple</title>
+    <h1>formulario Simple</h1>
+  </head>
+  <body>
+    <form name="f_prof" id="f_prof" action="formularioSimple.php" method="post">
+      Teclee su nombre:
+      <input type="text" name="nombre" id="nombre" /><br />
+
+      ¿Es usted soltero?
+      <input type="checkbox" name="soltero" id="soltero" value="SI" /><br />
+      Seleccione su edad:<br />
+
+      de 0 a 20 a&ntilde; os:
+      <input name="edad" type="radio" value="1" /><br />
+
+      de 21 a 40 a&ntilde; os:
+      <input name="edad" type="radio" value="2" /><br />
+
+      m&aacute;s de 40 a&ntilde; os:
+      <input name="edad" type="radio" value="3" /><br />
+
+      <input
+        name="datoOculto"
+        type="hidden"
+        id="datoOculto"
+        value="Este es un campo oculto"
+      />
+      <p><input type="submit" value="ENVIAR" name="ok" id="ok" /></p>
+    </form>
+  </body>
+</html>

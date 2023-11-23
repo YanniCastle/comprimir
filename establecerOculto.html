@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="style1.css" />
+    <!---->
+    <script lenguaje="javascript" type="text/javascript">
+      function comprobarFormulario() {
+        if (!document.getElementById("soltero").checked) {
+          document.getElementById("ocultoSoltero").value = "NO";
+        } else {
+          document.getElementById("ocultoSoltero").value = "SI";
+        }
+      }
+    </script>
+    <title>establecerOculto</title>
+  </head>
+  <body>
+    <h1>establecer Oculto</h1>
+    <form name="f_prof" id="f_prof" action="establecerOculto.php" method="post" onsubmit="javascript:comprobarFormulario();">
+      
+      ¿Es usted soltero?
+      <input type="checkbox" name="soltero" id="soltero" value="SI" /><br />
+
+      <input name="ocultoSoltero" type="hidden" id="ocultoSoltero" value=""/>
+      <p><input type="submit" value="ENVIAR" name="ok" id="ok" /></p>
+    </form>
+  </body>
+</html>
+
