@@ -10,6 +10,7 @@
   <h1>enviar Fichero</h1>
   <form name="f_prof" id="f_prof" action="enviarFichero.php" method="post" enctype="multipart/form-data">
      Fichero:
+     <input type="hidden" name="MAX_FILE_SIZE" value="5120000">
     <input name="fichero" type="file" id="fichero" />
     <p><input type="submit" value="ENVIAR" name="ok" /></p>
   </form>
