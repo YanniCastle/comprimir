@@ -53,13 +53,16 @@ if(isset($_POST["submit"])){
 
         ///////Acomodar Variables/////////////////////////////////
 /*Aqui se debe de ordenar toda la informacion como en la nueva tabla y nombres de varibles */
+
 //$nombrefoto = $_FILES['image']['name'];//PENDIENTE
 //$rutafoto = $destino_de_ruta . $nombrefoto;
 $eltitulo = $_POST['titulo'];
-//$fecha = date("Y-m-d H:i:s");
-//$descripcionfoto = $_POST['area_comentarios'];
+$fecha = date("Y-m-d H:i:s");
+$descripcionfoto = $_POST['area_comentarios'];
 //$preciofoto = $_POST['campo_precio'];
-//$id_usuarios_pass2 = $id;
+$id_usuarios_pass2 = 87;
+$nombrefoto=$_FILES["image"]["name"];
+//$rutafoto = $imageUploadPath;
 
 $miconsulta = "INSERT INTO fotos (id_usuarios_pass2, nombrefoto, rutafoto, titulofoto, fecha, descripcionfoto, preciofoto) VALUES 
 
@@ -74,7 +77,7 @@ echo "<br/>Se ha agregado el comentario con exito. <br/><br/>";
 
         $fileName = basename($_FILES["image"]["name"]); //PENDIENTE
 
-        $imageUploadPath = $uploadPath . $eltitulo.'_'.$fileName;//Agrege id para cambio de nombre 
+        $imageUploadPath = $uploadPath.$fileName;//Agrege id para cambio de nombre 
         $fileType = pathinfo($imageUploadPath, PATHINFO_EXTENSION); 
          
         // Permitimos solo unas extensiones
