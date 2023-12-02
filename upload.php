@@ -1,4 +1,12 @@
 ﻿<?php
+/*Diferente forma de conexion a base de datos */
+$miconexion = mysqli_connect("localhost", "root", "", "productos");
+/*Comprobar conexion*/
+if (!$miconexion) {                /*mysqli_error()*/
+  echo "La conexión ha fallado: " . mysqli_connect_error();/*¿falta algo?*/
+  exit();
+}
+
 /* 
  * Función personalizada para comprimir y 
  * subir una imagen mediante PHP
@@ -41,10 +49,32 @@ if(isset($_POST["submit"])){
     $status = 'error'; 
     if(!empty($_FILES["image"]["name"])) { 
         // File info
-        $id=$_POST['titulo'];//Agrege para cambio de nombre 
-        $fileName = basename($_FILES["image"]["name"]); 
+        //$id=$_POST['titulo'];//Agrege para cambio de nombre 
 
-        $imageUploadPath = $uploadPath . $id.'_'.$fileName;//Agrege id para cambio de nombre 
+        ///////Acomodar Variables/////////////////////////////////
+/*Aqui se debe de ordenar toda la informacion como en la nueva tabla y nombres de varibles */
+$nombrefoto = $_FILES['image']['name'];//PENDIENTE
+//$rutafoto = $destino_de_ruta . $nombrefoto;
+$eltitulo = $_POST['titulo'];
+//$fecha = date("Y-m-d H:i:s");
+//$descripcionfoto = $_POST['area_comentarios'];
+//$preciofoto = $_POST['campo_precio'];
+//$id_usuarios_pass2 = $id;
+
+$miconsulta = "INSERT INTO fotos (id_usuarios_pass2, nombrefoto, rutafoto, titulofoto, fecha, descripcionfoto, preciofoto) VALUES 
+
+('" . $id_usuarios_pass2 . "' , '" . $nombrefoto . "', '" . $rutafoto . "','" . $eltitulo . "' , '" . $fecha . "' , '" . $descripcionfoto . "' , '" . $preciofoto . "')";
+//Super cuidado en comillas sencillas y dobles y puntos para concatenar//
+$resultado = mysqli_query($miconexion, $miconsulta);
+/*Cerramos conexion*/
+mysqli_close($miconexion);
+echo "<br/>Se ha agregado el comentario con exito. <br/><br/>";
+
+        ///////////////////////////////////////
+
+        $fileName = basename($_FILES["image"]["name"]); //PENDIENTE
+
+        $imageUploadPath = $uploadPath . $eltitulo.'_'.$fileName;//Agrege id para cambio de nombre 
         $fileType = pathinfo($imageUploadPath, PATHINFO_EXTENSION); 
          
         // Permitimos solo unas extensiones
@@ -58,7 +88,9 @@ if(isset($_POST["submit"])){
              
             if($compressedImage){ 
                 $status = 'success'; 
-                $statusMsg = "La imagen se ha subido satisfactoriamente."; 
+                //$statusMsg = "La imagen se ha subido satisfactoriamente."; 
+echo '<script>alert("Se ha subido satisfactoriamente."); window.location="comprimir.html";</script>';
+
             }else{ 
                 $statusMsg = "La compresion de la imagen ha fallado"; 
             } 
@@ -75,5 +107,8 @@ if(isset($_POST["submit"])){
  
 // Mostrar el estado de la imagen 
 echo $statusMsg; 
+
+
+
  
 ?>
