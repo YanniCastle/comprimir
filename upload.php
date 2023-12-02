@@ -53,7 +53,7 @@ if(isset($_POST["submit"])){
 
         ///////Acomodar Variables/////////////////////////////////
 /*Aqui se debe de ordenar toda la informacion como en la nueva tabla y nombres de varibles */
-$nombrefoto = $_FILES['image']['name'];//PENDIENTE
+//$nombrefoto = $_FILES['image']['name'];//PENDIENTE
 //$rutafoto = $destino_de_ruta . $nombrefoto;
 $eltitulo = $_POST['titulo'];
 //$fecha = date("Y-m-d H:i:s");
