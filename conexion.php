@@ -1,9 +1,9 @@
 <?php
-$cn = mysqli_connect("localhost", "root", "", "pruebas") or die("Error");//agrege para boton eliminar
-$conn = new mysqli("localhost","root","","pruebas");//agrege de recuperar
+$cn = mysqli_connect("localhost", "root", "", "productos") or die("Error");//agrege para boton eliminar
+$conn = new mysqli("localhost","root","","productos");//agrege de recuperar
 //Usaremos libreria PDO
 try{
-    $base=new PDO('mysql:host=localhost; dbname=pruebas', 'root', '');
+    $base=new PDO('mysql:host=localhost; dbname=productos', 'root', '');
                /*Para poder ver los errores y tipos */             
     $base->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     $base->exec("SET CHARACTER SET UTF8");
