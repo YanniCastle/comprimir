@@ -21,7 +21,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $new_path = $upload_directory . $titulo.'.jpg'; // Cambia a tu nuevo nombre deseado
                                          //'nuevo_nombre.jpg'
         if (rename($old_path, $new_path)) {
-          
+          //echo "$new_file_name".'<br/>';//me da el nombre en el tiempo actual
             echo "¡La imagen se ha cargado y renombrado correctamente!";
         } else {
             echo "Hubo un error al renombrar la imagen.";
