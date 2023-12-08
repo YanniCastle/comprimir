@@ -49,14 +49,13 @@ if(isset($_POST["submit"])){
     $status = 'error'; 
     if(!empty($_FILES["image"]["name"])) { 
         // File info
-        $id=$_POST['titulo'];//Agrege para cambio de nombre 
+        $titulo=$_POST['titulo'];//Agrege para cambio de nombre 
 
-       
         ///////////////////////////////////////
 
         $fileName = basename($_FILES["image"]["name"]); //PENDIENTE
-                                     //$fileName
-        $imageUploadPath = $uploadPath.$id.'_'.$fileName;//Agrege id para cambio de nombre 
+                                              //$fileName
+        $imageUploadPath = $uploadPath.$titulo.'.jpg';//Agrege id para cambio de nombre 
         $fileType = pathinfo($imageUploadPath, PATHINFO_EXTENSION); 
          
         // Permitimos solo unas extensiones
@@ -95,7 +94,8 @@ $fecha = date("Y-m-d H:i:s");
 $descripcionfoto = $_POST['area_comentarios'];
 $preciofoto = $_POST['campo_precio'];
 $id_usuarios_pass2 = 87;
-$nombrefoto=$_FILES["image"]["name"];
+//$nombrefoto=$_FILES["image"]["name"];
+$nombrefoto = $titulo.'.jpg';
 
 $miconsulta = "INSERT INTO fotos (id_usuarios_pass2, nombrefoto, rutafoto, titulofoto, fecha, descripcionfoto, preciofoto) VALUES 
 
