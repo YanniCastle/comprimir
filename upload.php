@@ -97,9 +97,12 @@ $id_usuarios_pass2 = 87;
 //$nombrefoto=$_FILES["image"]["name"];
 $nombrefoto = $titulo.'.jpg';
 
-$miconsulta = "INSERT INTO fotos (id_usuarios_pass2, nombrefoto, rutafoto, titulofoto, fecha, descripcionfoto, preciofoto) VALUES 
+    $sector = $_POST['sector']; //Agrege, asi funciona bien
+    $sectores = array("Nuevo", "Semi nuevo", "De segunda mano", "Usado");
 
-('" . $id_usuarios_pass2 . "' , '" . $nombrefoto . "', '" . $rutafoto . "','" . $eltitulo . "' , '" . $fecha . "' , '" . $descripcionfoto . "' , '" . $preciofoto . "')";
+$miconsulta = "INSERT INTO fotos (id_usuarios_pass2, nombrefoto, rutafoto, titulofoto, fecha, descripcionfoto, preciofoto, sector) VALUES 
+
+('" . $id_usuarios_pass2 . "' , '" . $nombrefoto . "', '" . $rutafoto . "','" . $eltitulo . "' , '" . $fecha . "' , '" . $descripcionfoto . "' , '" . $preciofoto . "' , '" . $sectores[$sector] . "')";
 //Super cuidado en comillas sencillas y dobles y puntos para concatenar//
 $resultado = mysqli_query($miconexion, $miconsulta);
 /*Cerramos conexion*/
