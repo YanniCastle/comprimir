@@ -1,7 +1,7 @@
 <?php
 include("conexion.php");
-if (isset($_POST["eliminar_imagen"])) {
-  $default = "imagenes/imagenes_chalalas/sin_imagen.jpg";
+if (isset($_POST["eliminar_foto"])) {
+  $default = "carpeta_destino/sin_imagen.jpg";
   $sin_nombre = null;
   $sin_titulo = null;
   $sin_descripcion = null;
@@ -10,11 +10,11 @@ if (isset($_POST["eliminar_imagen"])) {
   $ruta = '';
   $id = $_GET['id'];
   $ruta_imagen= $_GET['ruta'];
-  $sql = "UPDATE usuarios_pass2 SET rutafoto1 ='$default', nombrefoto1='$sin_nombre', titulofoto1='$sin_titulo', descripcionfoto1='$sin_descripcion', preciofoto1='$sin_precio' WHERE ID='" . $id . "'";
+  $sql = "UPDATE fotos SET rutafoto ='$default', nombrefoto='$sin_nombre', titulofoto='$sin_titulo', descripcionfoto='$sin_descripcion', preciofoto='$sin_precio' WHERE id_usuarios_pass2='" . $id . "'";
   $res = mysqli_query($cn, $sql);
   if ($res) {
     unlink($ruta_imagen);
-    echo '<script>alert("Eliminado Correctamente"); window.location="usuarios_registrados3.php";</script>';
+    echo '<script>alert("Eliminado Correctamente"); window.location="mostrar_tabla_fotos.php";</script>';
   }
 } else {
   echo "No se pudo eliminar la imagen.";
