@@ -1,0 +1,30 @@
+body {
+  background: rgb(166, 184, 166);
+  h1{
+  text-align: center;
+  color: #8b4f1d;
+  }
+
+  h2{
+  text-align: left;
+  color: #1748e9;
+  }
+
+  h3{
+  text-align: left;
+  color: #17e917;
+  }
+  h4{
+  text-align: left;
+  color: #cf0ccf;
+  }
+  h5{
+  text-align: left;
+  color: #bce917;
+  }
+  h6{
+  text-align: left;
+  font-size: 22px;
+  color: #ee2805;
+  }
+}

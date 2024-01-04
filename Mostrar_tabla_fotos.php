@@ -1,12 +1,10 @@
 <!doctype html>
 <html>
-<!--Guardar esta pagina y hacer otra para recibir los comentarios con otra tabla en BD-->
-
 <head>
   <meta charset="utf-8">
   <title>Mostrar fotos</title>
   <link rel="shortcut icon" href="letraCfondonegro.png">
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style2.css" />
 </head>
 
 <body>
@@ -37,20 +35,19 @@ $id = 87;                                              //WHERE id_usuarios_pass2
 
   if ($resultado = mysqli_query($miconexion, $miconsulta)) {
     while ($registro = mysqli_fetch_assoc($resultado)) {
-      $id =$registro['id_foto'];/*Para el borrador en general*/
+      $id_foto =$registro['id_foto'];
       $rutafoto=$registro['rutafoto'];
-      echo "<h3>" . $registro['titulofoto'] . "</h3>";
+      echo "<h2>" . $registro['titulofoto'] . "</h2>";
+      echo "<h3>" . $registro['sector'] . "</h3>";
       echo "<h4>" . $registro['fecha'] . "</h4>";
-      echo "<div style='width:200px'><h5>" . $registro['descripcionfoto'] . "</h5></div><br/>";
-      /*Lo relacionado a imagen /*video 92  13:33*/
       if ($registro['nombrefoto'] != "") {
         echo "<img src='uploads/" . $registro['nombrefoto'] . "' width='150px'/>";
       }
-      echo  " <h5>Precio : $" . $registro['preciofoto'] . " pesos MX</h5>";
+      echo "<div style='width:200px'><h5>" . $registro['descripcionfoto'] . "</h5></div>";
+      echo  " <h6>Precio : $" . $registro['preciofoto'] . " pesos MX</h6>";
 ?>
 
-
-<form method="post" action="eliminar_foto.php?id=<?php echo $id; ?>&ruta=<?php echo $rutafoto; ?>">
+<form method="post" action="eliminar_foto.php?id=<?php echo $id_foto; ?>&ruta=<?php echo $rutafoto; ?>">
     <table class="uno">
       <tr>
         <td>
