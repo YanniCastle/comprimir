@@ -58,7 +58,7 @@ $id = 87;                                              //WHERE id_usuarios_pass2
   </form>
 </body>
 <?php
-      echo "<hr/><hr/><hr/><hr/>";/*Linea divisoria para capturas*/
+      echo "<hr/><hr/><hr/>";/*Linea divisoria para capturas*/
     }
   }
   ?>

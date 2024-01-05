@@ -4,6 +4,8 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="shortcut icon" href="letraCfondonegro.png">
+	<link rel="stylesheet" type="text/css" href="style2.css" />
 	<title>Cambiar foto</title>
 </head>
 
@@ -16,6 +18,7 @@
 	$descripcion = $valores['descripcionfoto'];
 	$rutafoto = $valores['rutafoto'];
 	$precio = $valores['preciofoto'];
+	$sector = $valores['sector'];
 	?>
 	<h1>cambiar foto</h1>
 
@@ -38,16 +41,9 @@
 			</tr>
 
 			<tr>
-				<td>Datos :</td>
-				<td>
-					<input type="text" name="campo_descripcion" id='campo_descripcion' value='<?php echo $descripcion; ?>' rows="4" cols="25"></input>
-				</td>
-
-
-			<tr>
 				<td>Descripción:</td>
 				<td>
-					<textarea name="campo_descripcion" id='campo_descripcion' value='<?php echo $descripcion; ?>' rows="4" cols="25"></textarea>
+					<input type="text" name="campo_descripcion" id='campo_descripcion' value='<?php echo $descripcion; ?>' rows="4" cols="25"></input>
 				</td>
 
 			<tr>
@@ -57,14 +53,23 @@
 					<input type='submit' name='submit' id="btn_enviar" value='Subir'>
 				</td>
 			</tr>
+
+<!--			Estado de producto:
+			<select name="sector" id="sector">
+				<option disabled selected=""><?php echo $sector; ?></option>
+				<option value="0">Nuevo</option>
+				<option value="1">Semi nuevo</option>
+				<option value="2">De segunda mano</option>
+				<option value="3">Usado</option>
+			</select>-->
 		</table>
 	</form>
 
-	<form method="post" action="eliminar_imagenb1.php?id=<?php echo $id; ?>&ruta=<?php echo $rutafoto; ?>">
+	<form method="post" action="eliminar_foto.php?id=<?php echo $id_foto; ?>&ruta=<?php echo $rutafoto; ?>">
 		<table class="uno">
 			<tr>
 				<td>
-					<button type="submit" name="eliminar_imagen">Eliminar foto</button>
+					<button type="submit" name="eliminar_foto">Eliminar foto</button>
 				</td>
 			</tr>
 		</table>
