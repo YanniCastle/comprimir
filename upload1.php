@@ -7,7 +7,7 @@ $articulo = $_POST['campo_titulo'];//articulo
 $descripcion = $_POST['campo_descripcion']; //Descripcion
 $precio = $_POST['campo_precio']; //Precio
 $directorio_destino = "uploads";//lugar donde se guardara
-//$img_file = $articulo;
+//$img_file = $articulo . '.jpg'; 
 $img_file = $_FILES["image"]["name"]; //Nombre del archivo
 $destino = $directorio_destino . '/' .  $img_file;                                                                                                                           //USUARIOS= '$email' OR MAIL= '$email' 
 mysqli_query($con, "UPDATE fotos SET nombrefoto = '$img_file', rutafoto = '$destino', titulofoto = '$articulo', descripcionfoto = '$descripcion', preciofoto = '$precio' WHERE id_foto = '$id'");             
@@ -35,10 +35,11 @@ $uploadPath = "uploads/";
 $status = $statusMsg = ''; 
 if(isset($_POST["submit"])){
     if ($_FILES["image"]["size"] <= 5120000) {
-
+//PENDIENTE:AL ACTUALIZAR QUE CAMBIE NOMBRE A TITULO
     $status = 'error'; 
     if(!empty($_FILES["image"]["name"])) { 
         // File info 
+        
         $fileName = basename($_FILES["image"]["name"]); 
         $imageUploadPath = $uploadPath . $fileName; 
         $fileType = pathinfo($imageUploadPath, PATHINFO_EXTENSION); 
