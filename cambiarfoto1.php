@@ -21,7 +21,7 @@
 	}
 	?>
 	<h1>cambiar foto</h1>
-
+	<!--Si cambia datos e imagen, solo falta borrar antigua imagen de uploads-->
 	<!--/ / / Formulario foto  / / / / / / / / / / / / / / / / / /-->
 	<form action="upload1.php" method="post" enctype="multipart/form-data">
 		<input type="text" name="email" value="<?php echo $email; ?>" style="display: none;">
