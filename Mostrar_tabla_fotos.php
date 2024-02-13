@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <title>Mostrar fotos</title>
   <link rel="shortcut icon" href="letraCfondonegro.png">
-  <link rel="stylesheet" href="style2.css" />
+  <link rel="stylesheet" href="style2a.css" />
 </head>
 
 <body>
@@ -68,8 +68,5 @@
     }
   }
 ?>
-
-
-
 
 </html>
