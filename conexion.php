@@ -1,4 +1,5 @@
 <?php
+$miconexion = mysqli_connect("localhost", "root", "", "productos");/*mostrar_fotos_con_css */
 $cn = mysqli_connect("localhost", "root", "", "productos") or die("Error");//agrege para boton eliminar
 $conn = new mysqli("localhost","root","","productos");//agrege de recuperar
 //Usaremos libreria PDO

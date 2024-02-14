@@ -1,0 +1,119 @@
+@media (400px <= width <= 1500px) {
+  * {
+    box-sizing: border-box;
+  }
+  body {
+    margin: 0;
+    padding: 0;
+    background-color: #f89443;
+  }
+  /*img {*/
+   /* width: 50%;*/
+   /* height:18%;*//*agrege para probar*/
+    /*border: 15px solid chocolate;*/
+  /*}
+  .row {/*PENDIENTE*/
+    /*display: flex;*/
+    /*padding: 3px;*/
+   /* flex-wrap: wrap;*/ /*cuando no cabe pasa a la siguiente*/
+ /* }*/
+  .column {
+    flex: 50%;
+   /* padding: 3px;*/
+    /*margin-bottom: 8px;*/
+    /*border: 15px solid chocolate;*/
+  }
+  .column img {
+    flex: 50%;
+   /* width: 250px;/*probando*/
+      width: 50%;
+      margin-top: 0px;
+      margin-bottom: 0px;
+      border: 5px solid rgb(18, 4, 212);
+  }
+  h1{
+    font-size: 24px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: left;
+    color: rgb(197, 42, 4);
+    margin-top: 0px;
+  }
+  h2{
+    font-size: 24px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: left;
+    color: aliceblue;
+    margin-top: 0px;
+  }
+  .description {
+    font-size: 22px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    text-align: left;
+    color: rgb(3, 59, 41);
+    margin-top: 0px;
+  }
+  hr {
+    width: auto;
+    color: aliceblue;
+  }
+}
+
+@media (100px <= width <= 399px) {
+  * {
+    box-sizing: border-box;
+  }
+  body {
+    margin: 0;
+    padding: 0;
+    background-color: rgb(5, 121, 5);
+  }
+  /*img {*/
+   /* width: 50%;*/
+   /* height:18%;*//*agrege para probar*/
+    /*border: 15px solid chocolate;*/
+  /*}
+  .row {/*PENDIENTE*/
+    /*display: flex;*/
+    /*padding: 3px;*/
+   /* flex-wrap: wrap;*/ /*cuando no cabe pasa a la siguiente*/
+ /* }*/
+  .column {
+    flex: 50%;
+   /* padding: 3px;*/
+    /*margin-bottom: 8px;*/
+    /*border: 15px solid chocolate;*/
+  }
+  .column img {
+    flex: 50%;
+    width: 50%;
+      margin-top: 0px;
+      margin-bottom: 0px;
+      border: 5px solid chocolate;
+  }
+  h1{
+    font-size: 24px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: left;
+    color: rgb(49, 73, 206);
+    margin-top: 0px;
+  }
+  h2{
+    font-size: 24px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: left;
+    color: aliceblue;
+    margin-top: 0px;
+  }
+  .description {
+    font-size: 22px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    text-align: left;
+    color: rgb(204, 112, 7);
+    margin-top: 0px;
+  }
+  hr {
+    width: auto;
+    color: aliceblue;
+  }
+}
+
