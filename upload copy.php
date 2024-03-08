@@ -37,7 +37,7 @@ $uploadPath = "uploads/";
 // Si el fichero se ha enviado
 $status = $statusMsg = ''; 
 if(isset($_POST["submit"])){ 
-    if ($_FILES["image"]["size"] <= 5120000){
+    if ($_FILES["image"]["size"] <= 9120000){
     $status = 'error'; 
     if(!empty($_FILES["image"]["name"])) { 
         // File info
