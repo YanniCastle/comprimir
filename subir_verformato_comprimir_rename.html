@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="letraCfondonegro.png">
+    <link rel="stylesheet" type="text/css" href="style2a.css" />
+    <title>fotos, acciones</title>
+  </head>
+  <body>
+    <h1>
+      Subir, comprimir, cambiar nombre, tamaño y
+      formato en fotos
+    </h1>
+    <br />
+
+    <form action="subir_verformato_comprimir_rename.php" method="post" enctype="multipart/form-data">
+      <label for="titulo">Titulo:</label>
+      <input type="text" name="titulo" required /><br />
+
+      <label for="image">Selecciona imagen:</label>
+      <input type="hidden" name="foto" value="5120000">
+      <input type="file" name="foto" required /><br />
+
+      <input type="submit" name="submit" value="Subir" />
+    </form>
+  </body>
+</html>

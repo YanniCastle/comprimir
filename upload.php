@@ -1,4 +1,6 @@
 ﻿<?php
+error_reporting(E_ALL);
+ini_set('display_errors', 1);    # Para mostrar los errores
 /*Diferente forma de conexion a base de datos */
 $miconexion = mysqli_connect("localhost", "root", "", "productos");
 /*Comprobar conexion*/
@@ -45,6 +47,9 @@ $uploadPath = "uploads/";
 // Si el fichero se ha enviado
 $status = $statusMsg = ''; 
 if(isset($_POST["submit"])){ 
+
+    var_dump($_FILES["image"]);//información relacionada con el archivo
+    
     if ($_FILES["image"]["size"] <= 5120000){
     $status = 'error'; 
     if(!empty($_FILES["image"]["name"])) { 
