@@ -44,14 +44,12 @@ function compressImage($source, $destination, $quality) {
 // Ruta subida
 $uploadPath = "uploads/"; 
  
-// Si el fichero se ha enviado
-$status = $statusMsg = ''; 
 if(isset($_POST["submit"])){ 
 
     var_dump($_FILES["image"]);//información relacionada con el archivo
     
     if ($_FILES["image"]["size"] <= 5120000){
-    $status = 'error'; 
+   
     if(!empty($_FILES["image"]["name"])) { 
         // File info
         $titulo=$_POST['titulo'];//Agrege para cambio de nombre 
@@ -60,7 +58,7 @@ if(isset($_POST["submit"])){
 
         $fileName = basename($_FILES["image"]["name"]); //PENDIENTE
                                               //$fileName
-        $imageUploadPath = $uploadPath.$titulo.'.jpg';//Agrege id para cambio de nombre 
+        $imageUploadPath = $uploadPath.$titulo.'_'.$fileName;//Agrege id para cambio de nombre 
         $fileType = pathinfo($imageUploadPath, PATHINFO_EXTENSION); 
          
         // Permitimos solo unas extensiones
@@ -73,34 +71,33 @@ if(isset($_POST["submit"])){
             $compressedImage = compressImage($imageTemp, $imageUploadPath, 12); 
              
             if($compressedImage){ 
-                $status = 'success'; 
-                //$statusMsg = "La imagen se ha subido satisfactoriamente."; 
 echo '<script>alert("Se ha subido satisfactoriamente."); window.location="comprimir.html";</script>';
 
             }else{ 
-                $statusMsg = "La compresion de la imagen ha fallado"; 
+                echo "La compresion de la imagen ha fallado"; 
             } 
         }else{ 
-            $statusMsg = 'Lo sentimos, solo se permiten imágenes con estas extensiones: JPG, JPEG, PNG, & GIF.'; 
+            echo 'Lo sentimos, solo se permiten imágenes con estas extensiones: JPG, JPEG, PNG, & GIF.'; 
         } 
     }else{ 
-        $statusMsg = 'Por favor, selecciona una imagen.'; 
+        echo 'Por favor, selecciona una imagen.'; 
     } 
-     }/*fin de tamaño */ else {
+     }/*fin de size */ 
+     else {
         echo "Demasiado grande la imagen";
      }
 
  ///////Acomodar Variables/////////////////////////////////
 /*Aqui se debe de ordenar toda la informacion como en la nueva tabla y nombres de varibles */
 
-$rutafoto = $imageUploadPath;
+$rutafoto = $uploadPath.$titulo.'_'.$fileName;
 $eltitulo = $_POST['titulo'];
 $fecha = date("Y-m-d H:i:s");
 $descripcionfoto = $_POST['area_comentarios'];
 $preciofoto = $_POST['campo_precio'];
 $id_usuarios_pass2 = 87;
 //$nombrefoto=$_FILES["image"]["name"];
-$nombrefoto = $titulo.'.jpg';
+$nombrefoto = $titulo . '_' . $fileName;
 
     $sector = $_POST['sector']; //Agrege, asi funciona bien
     $sectores = array("Nuevo", "Semi nuevo", "De segunda mano", "Usado");
@@ -116,14 +113,13 @@ echo "<br/>Se ha agregado el comentario con exito. <br/><br/>";
 
 
 
-
-
 }//fin del submit 
  
-// Mostrar el estado de la imagen 
-echo $statusMsg; 
 
+<<<<<<< HEAD
 
 
  
+=======
+>>>>>>> 37064760ab4138b8bad7ce9c4c3a508f510ab133
 ?>
